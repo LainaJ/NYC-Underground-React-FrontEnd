@@ -7,7 +7,7 @@ class TunnelListItem extends Component {
       <div>
         <h2> </h2>
 
-        <div onClick={null} >
+        <div onClick={ () => this.props.addToFavorites(this.props.tunnel)} >
 
           <div className="card">
             <div className="card-body">
@@ -17,7 +17,8 @@ class TunnelListItem extends Component {
               </h5>
               <p className="card-text">
                   {this.props.tunnel.location}
-              <p className="card-text"></p>
+              </p>
+              <p className="card-text">
               {this.props.tunnel.description}
               </p>
             </div>

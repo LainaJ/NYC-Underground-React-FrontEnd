@@ -9,8 +9,8 @@ class App extends React.Component {
 
   state = {
     tunnels: [],
-    mainPhoto: [], 
-    favorites: []
+    favorites: [],
+    mainPhoto: []
   }
 
   componentDidMount() {
@@ -22,8 +22,11 @@ class App extends React.Component {
     )
   }
 
-addToFavorites = () => {
-  
+addToFavorites = (addedTunnel) => {
+console.log(addedTunnel)
+  this.setState({
+    favorites: [...this.state.favorites, addedTunnel]
+  })
 }
 
   render () {
@@ -31,7 +34,7 @@ addToFavorites = () => {
     <div >
       < Navbar /> 
       < PhotoContainer photo={this.state.mainPhoto}/> 
-      < MainContainer tunnels={this.state.tunnels} /> 
+      < MainContainer tunnels={this.state.tunnels} favorites={this.state.favorites} addToFavorites={this.addToFavorites} /> 
     </div>
   );
   }

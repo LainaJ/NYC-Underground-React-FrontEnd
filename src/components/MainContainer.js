@@ -12,11 +12,11 @@ class MainContainer extends React.Component {
 
             <div className="row">
             <div className="col-4">
-            <FavoritesContainer />
+            <FavoritesContainer favorites={this.props.favorites} />
             </div>
 
             <div className="col-8">
-            <TunnelContainer tunnels={this.props.tunnels}/>
+            <TunnelContainer tunnels={this.props.tunnels} addToFavorites={this.props.addToFavorites} />
             </div>
           </div>
         
