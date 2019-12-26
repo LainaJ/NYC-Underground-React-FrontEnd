@@ -11,7 +11,7 @@ class TunnelListItem extends Component {
 
           <div className="card">
             <div className="card-body">
-              <img src={this.props.tunnel.image} />
+              <img className="card-images" src={this.props.tunnel.image} />
               <h5 className="card-title">
               {this.props.tunnel.name}
               </h5>
