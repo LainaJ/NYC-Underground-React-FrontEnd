@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MainContainer from './components/MainContainer'
+import PhotoContainer from './components/PhotoContainer'
+import Navbar from './components/Navbar'
 
-function App() {
+
+class App extends React.Component {
+
+  state = {
+    tunnels: [],
+    mainPhoto: [], 
+    favorites: []
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/tunnels')
+    .then(resp => resp.json())
+    .then(tunnelData => this.setState({
+      tunnels: tunnelData
+    })
+    )
+  }
+
+addToFavorites = () => {
+  
+}
+
+  render () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      < Navbar /> 
+      < PhotoContainer photo={this.state.mainPhoto}/> 
+      < MainContainer tunnels={this.state.tunnels} /> 
     </div>
   );
+  }
+
 }
 
 export default App;
