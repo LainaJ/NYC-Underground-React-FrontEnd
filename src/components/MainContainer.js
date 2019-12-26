@@ -12,16 +12,15 @@ class MainContainer extends React.Component {
 
             <div className="row">
             <div className="col-4">
-            <FavoritesContainer favorites={this.props.favorites} />
+            <FavoritesContainer favorites={this.props.favorites} removeFromFavorites={this.props.removeFromFavorites} />
             </div>
-
             <div className="col-8">
             <TunnelContainer tunnels={this.props.tunnels} addToFavorites={this.props.addToFavorites} />
             </div>
           </div>
         
         </div>
-        );
+        )
     }
 
     }

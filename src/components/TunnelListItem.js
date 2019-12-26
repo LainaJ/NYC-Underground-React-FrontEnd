@@ -7,7 +7,7 @@ class TunnelListItem extends Component {
       <div>
         <h2> </h2>
 
-        <div onClick={ () => this.props.addToFavorites(this.props.tunnel)} >
+        <div >
 
           <div className="card">
             <div className="card-body">
@@ -21,6 +21,8 @@ class TunnelListItem extends Component {
               <p className="card-text">
               {this.props.tunnel.description}
               </p>
+              <button onClick={ () => this.props.addToFavorites? this.props.addToFavorites(this.props.tunnel): this.props.removeFromFavorites(this.props.tunnel)}>
+              {this.props.addToFavorites? "Add To Favorites": "Remove From Favorites"}</button>
             </div>
           </div>
 

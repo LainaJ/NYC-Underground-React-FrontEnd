@@ -4,7 +4,6 @@ import MainContainer from './components/MainContainer'
 import PhotoContainer from './components/PhotoContainer'
 import Navbar from './components/Navbar'
 
-
 class App extends React.Component {
 
   state = {
@@ -22,21 +21,27 @@ class App extends React.Component {
     )
   }
 
-addToFavorites = (addedTunnel) => {
-console.log(addedTunnel)
-  this.setState({
-    favorites: [...this.state.favorites, addedTunnel]
-  })
-}
+  addToFavorites = (addedTunnel) => {
+    this.setState({
+      favorites: [...this.state.favorites, addedTunnel]
+    })
+  }
+
+  removeFromFavorites = (removedTunnel) => {
+    let updatedFavorites = this.state.favorites.filter(tunnel => tunnel !== removedTunnel)
+      this.setState({
+        favorites: updatedFavorites
+      })
+  }
 
   render () {
-  return (
-    <div >
-      < Navbar /> 
-      < PhotoContainer photo={this.state.mainPhoto}/> 
-      < MainContainer tunnels={this.state.tunnels} favorites={this.state.favorites} addToFavorites={this.addToFavorites} /> 
-    </div>
-  );
+    return (
+      <div >
+        < Navbar /> 
+        < PhotoContainer photo={this.state.mainPhoto}/> 
+        < MainContainer tunnels={this.state.tunnels} favorites={this.state.favorites} addToFavorites={this.addToFavorites} removeFromFavorites={this.removeFromFavorites} /> 
+      </div>
+    )
   }
 
 }

@@ -3,11 +3,12 @@ import TunnelListItem from './TunnelListItem';
 
 class FavoritesContainer extends Component {
 
-// map through the favorites array 
-renderFavorites = () => {
-  let favoritesArray =this.props.favorites
-  return favoritesArray.map(tunnel => <TunnelListItem tunnel={tunnel} /> )
-}
+  // map through the favorites array 
+  renderFavorites = () => {
+    let favoritesArray =this.props.favorites
+    return favoritesArray.map(tunnel => <TunnelListItem tunnel={tunnel} removeFromFavorites={this.props.removeFromFavorites} /> )
+  }
+
 
   render() {
     console.log(this.props.favorites)
