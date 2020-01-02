@@ -19,7 +19,7 @@ import '../index.css';
     handleSubmitForm = (e) => {
       e.preventDefault()
 
-      fetch('', { 
+      fetch('http://localhost:3000/tunnels', { 
       method: 'POST', 
       headers: {
         'content-type':'application/json',
@@ -27,19 +27,21 @@ import '../index.css';
       },
       body: JSON.stringify({
         name: this.state.name,
-        power: this.state.location,
+        location: this.state.location,
+        description: this.state.description,
         image: this.state.image
       })
       })
-    .then(response => response.json())
-    .then(newTunnel => this.props.addNewTunnel(newTunnel))
+    // .then(response => response.json())
+    // .then(newTunnel => this.props.addNewTunnel(newTunnel))
 
-      //this renders it to the screen:
-      // this.props.addNewKaiju({
-      //   name: this.state.formName,
-      //   power: this.state.formPower,
-      //   image: this.state.formImage
-      // })
+      // this renders it to the screen:
+      this.props.addNewTunnel({
+        name: this.state.name,
+        location: this.state.location,
+        description: this.state.description,
+        image: this.state.image
+      })
     }
 
     render() {
@@ -47,7 +49,7 @@ import '../index.css';
         <div>
           <h1>Discover a NYC tunnel that you want to share?</h1>
             <p>Snap a photo, submit the details and add to our collection!</p>
-            <form id='create-tunnel-form' onSubmit={this.handleSubmitForm}>
+            <form onSubmit={this.handleSubmitForm}>
 
               <label>Tunnel Name: </label>
               <input type='text' name="name" placeholder="Give your tunnel a name.."

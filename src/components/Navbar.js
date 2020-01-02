@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { NavLink } from 'react-router-dom';
 import '../index.css';
 
@@ -23,7 +24,7 @@ class Navbar extends React.Component {
           styling to Navlink 
           prop for activeStyle */}
         <NavLink to="/favorites" exact style={link} activeStyle={{background: 'darkgrey'}}>Favorites</NavLink>
-        <NavLink to="/new" exact style={link} activeStyle={{background: 'darkgrey'}}>Add Tunnel</NavLink>
+        <NavLink to="/new" exact style={link} activeStyle={{background: 'darkgrey'}}>Add Tunnel</NavLink> 
         </div>
         );
     }

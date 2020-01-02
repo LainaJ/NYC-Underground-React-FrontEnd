@@ -25,7 +25,6 @@ class MainContainer extends React.Component {
     render() {
         return (
         <div className="main-div">
-            This is the Main container div! 
             <div className="row">
             <div className="col-4">
             <FavoritesContainer 
