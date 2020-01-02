@@ -6,7 +6,14 @@ class FavoritesContainer extends Component {
   // map through the favorites array 
   renderFavorites = () => {
     let favoritesArray =this.props.favorites
-    return favoritesArray.map(tunnel => <TunnelListItem tunnel={tunnel} removeFromFavorites={this.props.removeFromFavorites} /> )
+    return favoritesArray.map(tunnel => <TunnelListItem 
+      tunnel={tunnel} 
+      removeFromFavorites={this.props.removeFromFavorites}
+      showDetails={this.props.showDetails} 
+      isHovering={this.props.isHovering}
+      togglePopup={this.props.togglePopup}
+      popupIsOpen={this.props.popupIsOpen}
+      /> )
   }
 
 

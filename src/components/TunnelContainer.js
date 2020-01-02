@@ -3,9 +3,16 @@ import TunnelListItem from './TunnelListItem'
 
 class TunnelContainer extends Component {
 
-renderTunnels = () => {
-  return this.props.tunnels.map(tunnel =>   <TunnelListItem tunnel={tunnel} addToFavorites={this.props.addToFavorites} /> )
-}
+  renderTunnels = () => {
+    return this.props.tunnels.map(tunnel => <TunnelListItem 
+      tunnel={tunnel} 
+      addToFavorites={this.props.addToFavorites} 
+      showDetails={this.props.showDetails} 
+      isHovering={this.props.isHovering}
+      togglePopup={this.props.togglePopup}
+      popupIsOpen={this.props.popupIsOpen}
+      /> )
+  }
 
   render() {
     return (

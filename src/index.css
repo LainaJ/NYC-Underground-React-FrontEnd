@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,16 +13,15 @@ code {
     monospace;
 }
 
-
-h1{
+h1 {
   padding: 2rem;
 }
 
-h2{
+h2 {
   text-align: center;
 }
 
-.card{
+.card {
   width: 70%;
   margin: 0 auto;
   text-align: center;
@@ -37,16 +37,51 @@ h2{
 
 .card-images {
   width: 100%;
-
 }
 
 .main{
   height: 500px;
-  width: 1300px;
-  /* margin: 0 auto;
-  padding: 5px auto; */
+  width: 1200px;
+  padding: 0;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* opacity: 60%; */
+}
+
+.popup {  
+  /* position: fixed;   */
+  /* width: 100%;   */
+  height: 100%;  
+  top: 0;  
+  left: 0;  
+  right: 0;  
+  bottom: 0;  
+  margin: auto;  
+  background-color: rgba(0,0,0, 0.5);  
+  color: white;
+}  
+
+.popup_inner {  
+  position: absolute;  
+  left: 25%;  
+  right: 25%;  
+  top: 25%;  
+  bottom: 25%;  
+  margin: auto; 
+  padding: 8px; 
+  border-radius: 20px;  
+  background: grey; 
+  width: 80%;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+.nav {
+  background: lightcoral;
+  left: 25%;  
+  right: 25%;  
+  top: 25%;  
+  bottom: 25%; 
+  margin: 0 auto; 
+  padding: 10px;
 }

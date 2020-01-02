@@ -1,5 +1,5 @@
 import React from 'react';
-import photo from '../most_cropped.jpg'
+// import photo from '../most_cropped.jpg'
 
 class PhotoContainer extends React.Component {
 
@@ -7,7 +7,7 @@ class PhotoContainer extends React.Component {
     render() {
         return (
         <div>
-            <img src={photo} alt="Tunnel" className="main" />
+            <img src={this.props.mainPhoto} alt="Tunnel" className="main" />
         </div>
         );
     }
