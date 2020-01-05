@@ -19,7 +19,7 @@ import '../index.css';
     handleSubmitForm = (e) => {
       e.preventDefault()
 
-      fetch('http://localhost:3000/tunnels', { 
+      fetch('http://localhost:3000/api/v1/tunnels', { 
       method: 'POST', 
       headers: {
         'content-type':'application/json',
@@ -48,26 +48,25 @@ import '../index.css';
       return (
         <div>
           <h1>Discover a NYC tunnel that you want to share?</h1>
-            <p>Snap a photo, submit the details and add to our collection!</p>
-            <form onSubmit={this.handleSubmitForm}>
-
-              <label>Tunnel Name: </label>
-              <input type='text' name="name" placeholder="Give your tunnel a name.."
+            <p className="create-form" >Snap a photo, submit the details and add to our collection!</p>
+            <form className="create-form" onSubmit={this.handleSubmitForm}>
+              <label className="labels" >Tunnel Name: </label>
+              <input type='text' name="name" placeholder="(e.g., Secret Tunnel)"
               value={this.state.name} 
               onChange={ (e) => this.handleChange(e)}
               />
-              <label>Location: </label>
-              <input type='text' name="location" placeholder="Add an approximate location..." 
+              <label className="labels">Location: </label>
+              <input type='text' name="location" placeholder="e.g., Union Square" 
               value={this.state.location}
               onChange={ (e) => this.handleChange(e)}
               />
-              <label>Description: </label>
-              <input type='text' name="description" placeholder="Describe your tunnel! " 
+              <label className="labels">Description: </label>
+              <input type='text' name="description" placeholder="Describe your tunnel... " 
               value={this.state.description}
               onChange={ (e) => this.handleChange(e)}
               />
-              <label>Image: </label>
-              <input type='text' name="image" placeholder="Add your image url here..." 
+              <label className="labels">Image: </label>
+              <input type='text' name="image" placeholder="Add image url here..." 
               value={this.state.image}
               onChange={ (e) => this.handleChange(e)}
               />

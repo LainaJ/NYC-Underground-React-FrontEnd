@@ -5,8 +5,7 @@ import TunnelContainer from './TunnelContainer'
 class MainContainer extends React.Component {
 
     state = {
-        popupIsOpen: false
-    }
+        popupIsOpen: false    }
 
     togglePopup = (e, image) => {
         this.setState({
@@ -14,19 +13,11 @@ class MainContainer extends React.Component {
         })
     }
 
-    // showDetails = (e, image) => {
-    //     // console.log(e)
-    //     this.setState({
-    //       isHovering: true
-    //       // mainPhoto: image
-    //     })
-    //     }
-
     render() {
         return (
         <div className="main-div">
             <div className="row">
-            <div className="col-4">
+            <div className="col-4 favorites">
             <FavoritesContainer 
                 favorites={this.props.favorites}
                 removeFromFavorites={this.props.removeFromFavorites}
@@ -36,7 +27,7 @@ class MainContainer extends React.Component {
                 popupIsOpen={this.state.popupIsOpen}
                  />
             </div>
-            <div className="col-8">
+            <div className="col-8 tunnels">
             <TunnelContainer 
                 tunnels={this.props.tunnels} 
                 addToFavorites={this.props.addToFavorites} 

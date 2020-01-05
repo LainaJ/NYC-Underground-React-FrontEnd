@@ -3,7 +3,7 @@ import TunnelListItem from './TunnelListItem';
 
 class FavoritesContainer extends Component {
 
-  // map through the favorites array 
+
   renderFavorites = () => {
     let favoritesArray =this.props.favorites
     return favoritesArray.map(tunnel => <TunnelListItem 
@@ -21,10 +21,10 @@ class FavoritesContainer extends Component {
     console.log(this.props.favorites)
     return (
       <div>
-        <h2>My Favorite Underground Tunnels</h2>
-        {/* call a render here so they render here later */}
-        {this.renderFavorites()}
-        
+        {this.props.favorites.length >= 1? <h2> My Favorites </h2> : <p> Browse the tunnels on the right to select favorites!</p>}
+          <p> 
+          {this.renderFavorites()}
+          </p>
       </div>
     );
   }
