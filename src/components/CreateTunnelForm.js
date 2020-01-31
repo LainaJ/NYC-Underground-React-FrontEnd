@@ -35,13 +35,13 @@ import '../index.css';
     // .then(response => response.json())
     // .then(newTunnel => this.props.addNewTunnel(newTunnel))
 
-      // this renders it to the screen:
       this.props.addNewTunnel({
         name: this.state.name,
         location: this.state.location,
         description: this.state.description,
         image: this.state.image
       })
+      this.props.routerProps.history.push("/welcome")
     }
 
     render() {

@@ -7,10 +7,8 @@ class TunnelListItem extends Component {
   render() {
     return (
       <div>
-        <h2> </h2>
 
-        <div >
-
+        <div>
           <div className="card">
             <div className="card-body">
               <img className="card-images" src={this.props.tunnel.image} alt="tunnel"/>
@@ -27,13 +25,9 @@ class TunnelListItem extends Component {
               {this.props.addToFavorites? "Add To Favorites": "Remove From Favorites"}</button>
               <button onClick={ (e) => this.props.togglePopup(e, this.props.tunnel.image)}>
               {this.props.popupIsOpen? <Popup tunnel={this.props.tunnel} togglePopup={this.props.togglePopup} /> : null} Details </button>
-            
             </div>
           </div>
-
-
-</div>
-        
+        </div>
       </div>
     );
   }

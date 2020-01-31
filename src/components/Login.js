@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import { NavLink } from 'react-router-dom';
 import '../index.css';
-import Clock from './Clock'; 
-
 
 class Login extends React.Component {
 
@@ -20,8 +18,6 @@ class Login extends React.Component {
 
       handleSubmitLogin = (e) => {
         e.preventDefault()
-        console.log(this.state.username)
-        //render to frontend
         this.props.login({
             username: this.state.username,
           })
@@ -29,8 +25,6 @@ class Login extends React.Component {
       }
 
         render () {
-          console.log(this.state.username)
-          console.log(this.state.password)
             return (
             <div>
                 <form className="login-form" onSubmit={this.handleSubmitLogin}>

@@ -3,7 +3,6 @@ import TunnelListItem from './TunnelListItem';
 
 class FavoritesContainer extends Component {
 
-
   renderFavorites = () => {
     let favoritesArray =this.props.favorites
     return favoritesArray.map(tunnel => <TunnelListItem 
@@ -15,7 +14,6 @@ class FavoritesContainer extends Component {
       popupIsOpen={this.props.popupIsOpen}
       /> )
   }
-
 
   render() {
     console.log(this.props.favorites)

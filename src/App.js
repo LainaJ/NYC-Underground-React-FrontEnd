@@ -30,20 +30,7 @@ class App extends React.Component {
           mainPhoto: photo
         })
         )
-    
       }
-
-
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/api/v1/tunnels')
-  //   .then(resp => resp.json())
-  //   .then(tunnelData => this.setState({
-  //     tunnels: tunnelData,
-  //     mainPhoto: photo
-  //   })
-  //   )
-
-  // }
 
 
   addToFavorites = (addedTunnel) => {
